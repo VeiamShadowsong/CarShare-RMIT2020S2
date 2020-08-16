@@ -13,8 +13,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('dashboard');
+});
+
+Route::get('/login', function () {
+    return view('user.login');
+});
+Route::post('/login', 'UserController@userLogin');
+Route::get('/register', function () {
+    return view('user.register');
+});
+Route::post('/register', 'UserController@userRegister');
+
+Route::group(['middleware' => ['web','user.logged.in']], function () {
+    Route::get('/logout', 'UserController@userLogout');
+    Route::get('/dashboard', function () {
+        return view('user.dashboard');
+    });
 });
 
 Route::prefix('admin')->group(function () {
