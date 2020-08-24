@@ -53,5 +53,8 @@ Route::prefix('admin')->group(function () {
         });
 
         Route::get('/cars', 'CarsController@showAdminCarsPage');
+        Route::get('/makes', 'CarsController@showAdminMakesPage');
+        Route::get('/makes/new', 'CarsController@showCreateNewMakesPage');
+        Route::post('/makes/new', 'CarsController@createNewMake');
     });
 });

@@ -138,7 +138,21 @@
 													</div>
 												</div>
 											</li>
-											<li class="m-menu__item"><a href="{{url('/admin/cars')}}" class="m-menu__link"><i class="m-menu__link-icon la la-cars"></i><span class="m-menu__link-text">Cars</span></a>
+											<li class="m-menu__item  m-menu__item--submenu m-menu__item--rel" m-menu-submenu-toggle="click" m-menu-link-redirect="1" aria-haspopup="true"><a href="javascript:;" class="m-menu__link m-menu__toggle" title="Non functional dummy link"><span
+															class="m-menu__item-here"></span><i class="m-menu__link-icon fa fa-car"></i><span class="m-menu__link-text">Cars</span><i class="m-menu__hor-arrow la la-angle-down"></i><i class="m-menu__ver-arrow la la-angle-right"></i></a>
+												<div class="m-menu__submenu  m-menu__submenu--fixed m-menu__submenu--left" style="width:300px"><span class="m-menu__arrow m-menu__arrow--adjust"></span>
+													<div class="m-menu__subnav">
+														<ul class="m-menu__content">
+															<li class="m-menu__item">
+																<ul class="m-menu__inner">
+																	<br/>
+																	<li class="m-menu__item " m-menu-link-redirect="1" aria-haspopup="true"><a href="{{url('/admin/cars')}}" class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--line"><span></span></i><span class="m-menu__link-text">Cars</span></a></li>
+																	<li class="m-menu__item " m-menu-link-redirect="1" aria-haspopup="true"><a href="{{url('/admin/makes')}}" class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--line"><span></span></i><span class="m-menu__link-text">Makes</span></a></li>
+																</ul>
+															</li>
+														</ul>
+													</div>
+												</div>
 											</li>
 										</ul>
 									</div>
@@ -249,8 +263,15 @@
 								</ul>
 							</div>
 						</li>
-						<li class="m-menu__item " aria-haspopup="true" m-menu-link-redirect="1"><a href="{{url('/admin/create-new-user')}}" class="m-menu__link "><i class="m-menu__link-icon flaticon-user-add"></i><span class="m-menu__link-text">New User</span></a></li>
-						<li class="m-menu__item " aria-haspopup="true" m-menu-link-redirect="1"><a href="{{url('/admin/cars')}}" class="m-menu__link "><i class="m-menu__link-icon la la-car"></i><span class="m-menu__link-text">Cars</span></a></li>
+						<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true" m-menu-submenu-toggle="hover"><a href="javascript:;" class="m-menu__link m-menu__toggle"><i class="m-menu__link-icon flaticon-list-2"></i><span class="m-menu__link-text">Cars</span><i
+										class="m-menu__ver-arrow la la-car"></i></a>
+							<div class="m-menu__submenu "><span class="m-menu__arrow"></span>
+								<ul class="m-menu__subnav">
+									<li class="m-menu__item " aria-haspopup="true" m-menu-link-redirect="1"><a href="{{url('/admin/cars')}}" class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text">Cars</span></a></li>
+									<li class="m-menu__item " aria-haspopup="true" m-menu-link-redirect="1"><a href="{{url('/admin/makes')}}" class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text">Makes</span></a></li>
+								</ul>
+							</div>
+						</li>
 					</ul>
 				</div>
 
