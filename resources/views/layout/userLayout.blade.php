@@ -22,6 +22,10 @@
 
 		<!--end::Web font -->
 
+		<!--begin::Vendor script -->
+		@yield('vendor-script')
+		<!--end::Vendor script -->
+
 		<!--begin:: Global Mandatory Vendors -->
 		<link href="{{asset('resources/theme/vendors/perfect-scrollbar/css/perfect-scrollbar.css')}}" rel="stylesheet" type="text/css" />
 
