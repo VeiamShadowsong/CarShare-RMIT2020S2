@@ -59,6 +59,12 @@ class UserController extends Controller
 
         return redirect('/login');
     }
+
+
+    public function showCarsPage()
+    {
+        return view('user.cars');
+    }
 }
 
 ?>
