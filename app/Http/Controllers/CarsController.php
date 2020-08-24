@@ -25,6 +25,26 @@ class CarsController extends Controller
     {
         return Make::all();
     }
+
+    public function showAdminMakesPage()
+    {
+        return view('admin.makes')->with('makes', Make::all());
+    }
+
+
+    public function showCreateNewMakesPage()
+    {
+        return view('admin.makes-new');
+    }
+
+    public function createNewMake(Request $request)
+    {
+        $input = $request->all();
+        Make::create([
+            'name' => $input['name'],
+        ]);
+        return redirect('admin/makes');
+    }
 }
 
 ?>
