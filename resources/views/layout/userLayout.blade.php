@@ -47,7 +47,6 @@
 		<link href="{{asset('resources/theme/vendors/socicon/css/socicon.css')}}" rel="stylesheet" type="text/css" />
 		<link href="{{asset('resources/theme/vendors/vendors/line-awesome/css/line-awesome.css')}}" rel="stylesheet" type="text/css" />
 		<link href="{{asset('resources/theme/vendors/vendors/flaticon/css/flaticon.css')}}" rel="stylesheet" type="text/css" />
-		<link href="{{asset('resources/theme/vendors/vendors/css/styles.css')}}" rel="stylesheet" type="text/css" />
 		<link href="{{asset('resources/theme/vendors/vendors/fontawesome5/css/all.min.css')}}" rel="stylesheet" type="text/css" />
 
 		<!--end:: Global Optional Vendors -->
@@ -92,7 +91,7 @@
 							<div class="m-stack m-stack--ver m-stack--general">
 								<div class="m-stack__item m-stack__item--middle m-brand__logo">
 									<a href="/" class="m-brand__logo-wrapper">
-										<img alt="" src="{{asset('resources/images/tofuture_logo.png')}}" width="60%" />
+										<img alt="" src="{{asset('resources/theme/assets/app/media/img/logos/logo-2.png')}}" width="60%" />
 									</a>
 								</div>
 								<div class="m-stack__item m-stack__item--middle m-brand__tools">
@@ -137,7 +136,7 @@
 
 							<!-- BEGIN: Brand -->
 							<a href="index.html" class="m-brand m-brand--desktop">
-								<img alt="" src="{{asset('resources/images/tofuture_logo.png')}}" width="70px"/>
+								<img alt="" src="{{asset('resources/theme/assets/app/media/img/logos/logo-2.png')}}" width="70px"/>
 							</a>
 
 							<!-- END: Brand -->
