@@ -29,10 +29,11 @@ Route::post('/register', 'UserController@userRegister');
 
 Route::group(['middleware' => ['web','user.logged.in']], function () {
     Route::get('/logout', 'UserController@userLogout');
-    Route::get('/cars', 'UserController@showCarsPage');
     Route::get('/dashboard', function () {
         return view('user.dashboard');
     });
+
+    Route::get('/cars', 'CarsController@showUserCarsPage');
 });
 
 Route::prefix('admin')->group(function () {
@@ -50,5 +51,7 @@ Route::prefix('admin')->group(function () {
         Route::get('/dashboard', function () {
             return view('admin.dashboard');
         });
+
+        Route::get('/cars', 'CarsController@showAdminCarsPage');
     });
 });

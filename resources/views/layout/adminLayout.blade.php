@@ -138,6 +138,8 @@
 													</div>
 												</div>
 											</li>
+											<li class="m-menu__item"><a href="{{url('/admin/cars')}}" class="m-menu__link"><i class="m-menu__link-icon la la-cars"></i><span class="m-menu__link-text">Cars</span></a>
+											</li>
 										</ul>
 									</div>
 
@@ -248,6 +250,7 @@
 							</div>
 						</li>
 						<li class="m-menu__item " aria-haspopup="true" m-menu-link-redirect="1"><a href="{{url('/admin/create-new-user')}}" class="m-menu__link "><i class="m-menu__link-icon flaticon-user-add"></i><span class="m-menu__link-text">New User</span></a></li>
+						<li class="m-menu__item " aria-haspopup="true" m-menu-link-redirect="1"><a href="{{url('/admin/cars')}}" class="m-menu__link "><i class="m-menu__link-icon la la-car"></i><span class="m-menu__link-text">Cars</span></a></li>
 					</ul>
 				</div>
 
