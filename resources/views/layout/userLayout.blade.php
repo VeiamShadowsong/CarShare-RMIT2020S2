@@ -124,6 +124,7 @@
 									<div id="m_header_menu" class="m-header-menu m-aside-header-menu-mobile m-aside-header-menu-mobile--offcanvas  m-header-menu--skin-light m-header-menu--submenu-skin-light m-aside-header-menu-mobile--skin-dark m-aside-header-menu-mobile--submenu-skin-dark ">
 										<ul class="m-menu__nav  m-menu__nav--submenu-arrow ">
 											<li class="m-menu__item"><a href="{{url('/')}}" class="m-menu__link"><i class="m-menu__link-icon flaticon-analytics"></i><span class="m-menu__link-text">Dashboard</span></a>
+											<li class="m-menu__item"><a href="{{url('/cars')}}" class="m-menu__link"><i class="m-menu__link-icon la la-cars"></i><span class="m-menu__link-text">Cars</span></a>
 											</li>
 										</ul>
 									</div>
@@ -224,6 +225,7 @@
 							<i class="m-menu__section-icon flaticon-more-v2"></i>
 						</li>
 						<li class="m-menu__item " aria-haspopup="true" m-menu-link-redirect="1"><a href="{{url('/dashboard')}}" class="m-menu__link "><i class="m-menu__link-icon flaticon-dashboard"></i><span class="m-menu__link-text">Users Dashboard</span></a></li>
+						<li class="m-menu__item " aria-haspopup="true" m-menu-link-redirect="1"><a href="{{url('/cars')}}" class="m-menu__link "><i class="m-menu__link-icon la la-car"></i><span class="m-menu__link-text">Cars</span></a></li>
 					</ul>
 				</div>
 
