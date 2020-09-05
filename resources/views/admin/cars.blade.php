@@ -27,7 +27,7 @@
                     <div class="m-portlet__head-tools">
                         <ul class="m-portlet__nav">
                             <li class="m-portlet__nav-item">
-                                <a href="{{url('/admin/car/create-new-car')}}" class="btn btn-primary m-btn m-btn--pill m-btn--custom m-btn--icon m-btn--air">
+                                <a href="{{url('/admin/cars/new')}}" class="btn btn-primary m-btn m-btn--pill m-btn--custom m-btn--icon m-btn--air">
                      <span>
                      <i class="la la-plus"></i>
                      <span>New Car</span>
