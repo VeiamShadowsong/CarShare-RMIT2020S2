@@ -13,7 +13,7 @@ class CarsController extends Controller
 {
     public function showUserCarsPage()
     {
-        return view('user.cars');
+        return view('user.cars')->with('cars', Car::all());
     }
 
     public function showAdminCarsPage()

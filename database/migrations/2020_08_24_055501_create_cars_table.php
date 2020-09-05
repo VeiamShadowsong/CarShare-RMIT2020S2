@@ -17,9 +17,12 @@ class CreateCarsTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained('users');
             $table->foreignId('make_id')->constrained('makes');
+            $table->string('number');
             $table->string('type')->nullable();
             $table->string('color')->nullable();
-            $table->string('state')->default('free');
+            $table->double('lat', 14, 10)->nullable();
+            $table->double('lng', 14, 10)->nullable();
+            $table->string('status')->default('free');
             $table->timestamps();
         });
     }
