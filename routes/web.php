@@ -52,9 +52,16 @@ Route::prefix('admin')->group(function () {
             return view('admin.dashboard');
         });
 
-        Route::get('/cars', 'CarsController@showAdminCarsPage');
-        Route::get('/makes', 'CarsController@showAdminMakesPage');
-        Route::get('/makes/new', 'CarsController@showCreateNewMakesPage');
-        Route::post('/makes/new', 'CarsController@createNewMake');
+        Route::prefix('cars')->group(function () {
+            Route::get('/', 'CarsController@showAdminCarsPage');
+            Route::get('/new', 'CarsController@showCreateNewCarsPage');
+            Route::post('/new', 'CarsController@createNewCar');
+        });
+
+        Route::prefix('makes')->group(function () {
+            Route::get('/', 'CarsController@showAdminMakesPage');
+            Route::get('/new', 'CarsController@showCreateNewMakesPage');
+            Route::post('/new', 'CarsController@createNewMake');
+        });
     });
 });

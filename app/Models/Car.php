@@ -13,6 +13,11 @@ class Car extends Model
 
     public function make()
     {
-        return $this->belongsTo('App\Http\Models\Make');
+        return $this->belongsTo('App\Models\Make');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User');
     }
 }

@@ -13,6 +13,6 @@ class Make extends Model
 
     public function cars()
     {
-        return $this->hasMany('App\Http\Models\Car');
+        return $this->hasMany('App\Models\Car');
     }
 }
