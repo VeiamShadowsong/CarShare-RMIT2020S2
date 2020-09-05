@@ -21,6 +21,25 @@ class CarsController extends Controller
         return view('admin.cars')->with('cars', Car::all());
     }
 
+    public function showCreateNewCarsPage()
+    {
+        return view('admin.cars-new')->with('makes', Make::all())->with('users', User::all());
+    }
+
+
+    public function createNewCar(Request $request)
+    {
+        $input = $request->all();
+        Car::create([
+            'user_id' => $input['user-id'],
+            'make_id' => $input['make-id'],
+            'type' => $input['type'],
+            'color' => $input['color']
+        ]);
+        return redirect('admin/cars');
+    }
+
+
     public function getMakes()
     {
         return Make::all();
