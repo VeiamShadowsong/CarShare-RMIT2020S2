@@ -70,5 +70,7 @@ Route::prefix('admin')->group(function () {
             Route::get('/new', 'CarsController@showCreateNewMakesPage');
             Route::post('/new', 'CarsController@createNewMake');
         });
+
+        Route::get('/orders', 'AdminController@showAdminOrdersPage');
     });
 });
