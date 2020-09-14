@@ -122,6 +122,11 @@ class UserController extends Controller
         ]);
         return redirect('/orders');
     }
+
+    public function showUserOrdersPage()
+    {
+        return view('user.orders')->with('orders', Order::where('user_id', session('user')[0]->id)->get());
+    }
 }
 
 ?>
