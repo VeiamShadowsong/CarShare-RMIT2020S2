@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\License;
+use App\Models\Car;
+use App\Models\Order;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -97,14 +99,28 @@ class UserController extends Controller
         return self::showLicensePage($error);
     }
 
-    public function showOrderCarPage()
+    public function showOrderCarPage($carId)
     {
         $user = session('user')[0];
         if(!$user->checkLicenseValidate()) {
             return redirect('/license');
-        } else {
-            return view('user.orderCar');
         }
+
+        $car = Car::where('id', $carId)->first();
+
+        return view('user.order-car')->with('car', $car);
+    }
+
+    public function orderCar($carId)
+    {
+        $car = Car::where('id', $carId)->first();
+        $car->update(['status' => 'ordered']);
+
+        Order::create([
+            'user_id' => session('user')[0]->id,
+            'car_id' => $carId
+        ]);
+        return redirect('/orders');
     }
 }
 

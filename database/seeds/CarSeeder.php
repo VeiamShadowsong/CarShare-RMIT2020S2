@@ -25,10 +25,6 @@ class CarSeeder extends Seeder
             'suv',
             'truck'
         ];
-        $statuses = [
-            'free',
-            'ordered',
-        ];
         $colors = [
             'blue',
             'white',
@@ -48,7 +44,7 @@ class CarSeeder extends Seeder
                 'color' => $colors[rand(0, count($colors) - 1)],
                 'lat' => $lat + rand(-$randomRange, $randomRange)/$zoom,
                 'lng' => $lng + rand(-$randomRange, $randomRange)/$zoom,
-                'status' => $statuses[rand(0, count($statuses) - 1)]
+                'status' => 'free'
             ]);
         }
 
