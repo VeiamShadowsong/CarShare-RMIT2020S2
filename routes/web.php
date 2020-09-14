@@ -34,9 +34,11 @@ Route::group(['middleware' => ['web','user.logged.in']], function () {
     Route::get('/license', 'UserController@showLicensePage');
     Route::post('/license', 'UserController@updateLicense');
 
-    Route::get('/cars', 'CarsController@showUserCarsPage');
-
-    Route::get('/cars/order/{carId}', 'UserController@showOrderCarPage');
+    Route::prefix('cars')->group(function () {
+        Route::get('/', 'CarsController@showUserCarsPage');
+        Route::get('/order/{carId}', 'UserController@showOrderCarPage');
+        Route::post('/order/{carId}', 'UserController@orderCar');
+    });
 
 });
 
