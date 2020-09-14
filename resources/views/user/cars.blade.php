@@ -69,7 +69,11 @@
                                 "<p><b>Color: </b>{{$car->color}}</p>" +
                                 "<p><b>Status: </b>{{$car->status}}</p>" +
                                 "<p><b>Owner: </b>{{$car->user->first_name}} {{$car->user->last_name}}</p>" +
+                                @if($car->status == 'free')
                                 `<a href="{{url('/cars/order')}}/{{$car->id}}" class="btn btn-primary m-btn m-btn--pill m-btn--custom m-btn--icon m-btn--air">Order</a>` +
+                                @elseif($car->status == 'ordered')
+                                `<button class="btn btn-metal m-btn m-btn--pill m-btn--custom m-btn--icon m-btn--air" disabled>Ordered</button>` +
+                                @endif
                             "</div>" +
                         "</div>"
                 })
