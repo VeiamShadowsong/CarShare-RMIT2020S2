@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\License;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -58,6 +59,52 @@ class UserController extends Controller
         session(['user' => null]);
 
         return redirect('/login');
+    }
+
+    public function showrDashboardPage()
+    {
+        return view('user.dashboard');
+    }
+
+    public function showLicensePage($error = null)
+    {
+        $user = session('user')[0];
+        $license = $user->license();
+        if($error == null) {
+            if(!$license) {
+                $error = 'You do not have drive license now, please upload';
+            } elseif(strtotime($license->expired_at) < time()) {
+                $error = 'You license has expired, please upload new license';
+            }
+        }
+        return view('user.license')->with('user',  $user)->with('error', $error);
+    }
+
+    public function updateLicense(Request $request)
+    {
+        $input = $request->all();
+
+        $error = null;
+        if (strtotime($input['expired-at']) < time()) {
+            $error = 'This License has expired, please upload new license';
+        } else {
+            License::create([
+                'user_id' => session('user')[0]->id,
+                'number' => $input['number'],
+                'expired_at' => $input['expired-at']
+            ]);
+        }
+        return self::showLicensePage($error);
+    }
+
+    public function showOrderCarPage()
+    {
+        $user = session('user')[0];
+        if(!$user->checkLicenseValidate()) {
+            return redirect('/license');
+        } else {
+            return view('user.orderCar');
+        }
     }
 }
 
