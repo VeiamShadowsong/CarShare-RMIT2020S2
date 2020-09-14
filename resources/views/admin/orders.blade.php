@@ -1,4 +1,4 @@
-@extends('layout.userLayout')
+@extends('layout.adminLayout')
 
 @section('css')
     <link href="{{asset('resources/theme/assets/vendors/custom/datatables/datatables.bundle.css')}}" rel="stylesheet" type="text/css" />
@@ -21,7 +21,7 @@
                 <div class="m-portlet__head">
                     <div class="m-portlet__head-caption">
                         <div class="m-portlet__head-title">
-                            <h3 class="m-portlet__head-text" id="table-title">Your Order List</h3>
+                            <h3 class="m-portlet__head-text" id="table-title">Order List</h3>
                         </div>
                     </div>
                 </div>
@@ -29,6 +29,7 @@
                     <table class="table table-striped table-bordered table-hover table-checkable" id="order-table">
                         <thead>
                         <tr>
+                            <th>Customer</th>
                             <th>Number</th>
                             <th>Make</th>
                             <th>Type</th>
@@ -41,6 +42,7 @@
                         <tbody>
                         @foreach($orders as $order)
                             <tr>
+                                <td>{{$order->user->first_name}} {{$order->user->last_name}}</td>
                                 <td>{{$order->car->number}}</td>
                                 <td>{{$order->car->make->name}}</td>
                                 <td>{{$order->car->type}}</td>
