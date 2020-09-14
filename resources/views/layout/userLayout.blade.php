@@ -64,6 +64,9 @@
 	<!-- end::Head -->
 
 	<!-- begin::Body -->
+	@php
+		$user = session('user')[0];
+	@endphp
 	<body class="m--skin- m-page--loading-enabled m-page--loading m-content--skin-light m-header--fixed m-header--fixed-mobile m-aside-left--offcanvas-default m-aside-left--enabled m-aside-left--fixed m-aside-left--skin-dark m-aside--offcanvas-default">
 
 		<!-- begin::Page loader -->
@@ -151,7 +154,7 @@
 
 										<li class="m-nav__item m-dropdown m-dropdown--medium m-dropdown--arrow  m-dropdown--align-right m-dropdown--mobile-full-width m-dropdown--skin-light" m-dropdown-toggle="click">
 											<a href="#" class="m-nav__link m-dropdown__toggle">
-												<span class="m-topbar__username m--hidden-mobile">{{Session::get('user')[0]->email}}</span>
+												<span class="m-topbar__username m--hidden-mobile">{{$user->email}}</span>
 												<span class="m-nav__link-icon m-topbar__usericon  m--hide">
 													<span class="m-nav__link-icon-wrapper"><i class="flaticon-user-ok"></i></span>
 												</span>
@@ -162,7 +165,7 @@
 													<div class="m-dropdown__header m--align-center">
 														<div class="m-card-user m-card-user--skin-light">
 															<div class="m-card-user__details">
-																<span class="m-card-user__name m--font-weight-500">{{Session::get('user')[0]->first_name}} {{Session::get('user')[0]->last_name}}</span>
+																<span class="m-card-user__name m--font-weight-500">{{$user->first_name}} {{$user->last_name}}</span>
 															</div>
 														</div>
 													</div>
@@ -175,6 +178,21 @@
 																		<span class="m-nav__link-title">
 																			<span class="m-nav__link-wrap">
 																				<span class="m-nav__link-text">My Profile</span>
+																			</span>
+																		</span>
+																	</a>
+																</li>
+																<li class="m-nav__item">
+																	<a href="{{url('/license')}}" class="m-nav__link">
+																		<i class="m-nav__link-icon fa fa-credit-card"></i>
+																		<span class="m-nav__link-title">
+																			<span class="m-nav__link-wrap">
+																				<span class="m-nav__link-text">Drive License</span>
+																				@if(!$user->checkLicenseValidate())
+																				<span class="m-nav__link-badge">
+																					<span class="m-badge m-badge--danger">!</span>
+																				</span>
+																				@endif
 																			</span>
 																		</span>
 																	</a>

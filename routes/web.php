@@ -33,6 +33,9 @@ Route::group(['middleware' => ['web','user.logged.in']], function () {
         return view('user.dashboard');
     });
 
+    Route::get('/license', 'UserController@showLicensePage');
+    Route::post('/license', 'UserController@updateLicense');
+
     Route::get('/cars', 'CarsController@showUserCarsPage');
 });
 
