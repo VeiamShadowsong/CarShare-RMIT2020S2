@@ -20,4 +20,22 @@ class User extends Authenticatable
     public $timestamps = true;
 
     protected $guarded = [];
+
+    public function license()
+    {
+        return $this->hasOne('App\Models\License')->orderBy('expired_at', 'DESC')->first();
+    }
+
+    public function checkLicenseValidate()
+    {
+        $license = $this->license();
+        if(!$license) {
+            return false;
+        }
+
+        if(strtotime($license->expired_at) < time()) {
+            return false;
+        }
+        return true;
+    }
 }
