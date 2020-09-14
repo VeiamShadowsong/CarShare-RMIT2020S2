@@ -40,6 +40,7 @@ Route::group(['middleware' => ['web','user.logged.in']], function () {
         Route::post('/order/{carId}', 'UserController@orderCar');
     });
 
+    Route::get('/orders', 'UserController@showUserOrdersPage');
 });
 
 Route::prefix('admin')->group(function () {
