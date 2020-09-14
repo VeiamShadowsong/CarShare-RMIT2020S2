@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Admin;
+use App\Models\Order;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -29,6 +30,11 @@ class AdminController extends Controller
     {
         session(['admin' => null]);
         return redirect('/admin/login');
+    }
+
+    public function showAdminOrdersPage()
+    {
+        return view('admin.orders')->with('orders', Order::all());
     }
 }
 

@@ -154,6 +154,7 @@
 													</div>
 												</div>
 											</li>
+											<li class="m-menu__item"><a href="{{url('/admin/orders')}}" class="m-menu__link"><i class="m-menu__link-icon fa fa-list-ol"></i><span class="m-menu__link-text">Orders</span></a>
 										</ul>
 									</div>
 
@@ -253,7 +254,7 @@
 							<i class="m-menu__section-icon flaticon-more-v2"></i>
 						</li>
 						<li class="m-menu__item " aria-haspopup="true" m-menu-link-redirect="1"><a href="{{url('/admin/dashboard')}}" class="m-menu__link "><i class="m-menu__link-icon flaticon-dashboard"></i><span class="m-menu__link-text">Users Dashboard</span></a></li>
-						<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true" m-menu-submenu-toggle="hover"><a href="javascript:;" class="m-menu__link m-menu__toggle"><i class="m-menu__link-icon flaticon-list-2"></i><span class="m-menu__link-text">Users List</span><i
+						<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true" m-menu-submenu-toggle="hover"><a href="javascript:;" class="m-menu__link m-menu__toggle"><i class="m-menu__link-icon flaticon-list-2"></i><span class="m-menu__link-text">Users</span><i
 								 class="m-menu__ver-arrow la la-angle-right"></i></a>
 							<div class="m-menu__submenu "><span class="m-menu__arrow"></span>
 								<ul class="m-menu__subnav">
@@ -263,7 +264,7 @@
 								</ul>
 							</div>
 						</li>
-						<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true" m-menu-submenu-toggle="hover"><a href="javascript:;" class="m-menu__link m-menu__toggle"><i class="m-menu__link-icon flaticon-list-2"></i><span class="m-menu__link-text">Cars</span><i
+						<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true" m-menu-submenu-toggle="hover"><a href="javascript:;" class="m-menu__link m-menu__toggle"><i class="m-menu__link-icon fa fa-car"></i><span class="m-menu__link-text">Cars</span><i
 										class="m-menu__ver-arrow la la-car"></i></a>
 							<div class="m-menu__submenu "><span class="m-menu__arrow"></span>
 								<ul class="m-menu__subnav">
@@ -272,6 +273,7 @@
 								</ul>
 							</div>
 						</li>
+						<li class="m-menu__item " aria-haspopup="true" m-menu-link-redirect="1"><a href="{{url('/admin/orders')}}" class="m-menu__link "><i class="m-menu__link-icon fa fa-list-ol"></i><span class="m-menu__link-text">Orders</span></a></li>
 					</ul>
 				</div>
 
