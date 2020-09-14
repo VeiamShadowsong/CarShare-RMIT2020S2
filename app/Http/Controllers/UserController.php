@@ -60,6 +60,12 @@ class UserController extends Controller
 
         return redirect('/login');
     }
+
+    public function showrDashboardPage()
+    {
+        return view('user.dashboard');
+    }
+
     public function showLicensePage($error = null)
     {
         $user = session('user')[0];
@@ -89,6 +95,16 @@ class UserController extends Controller
             ]);
         }
         return self::showLicensePage($error);
+    }
+
+    public function showOrderCarPage()
+    {
+        $user = session('user')[0];
+        if(!$user->checkLicenseValidate()) {
+            return redirect('/license');
+        } else {
+            return view('user.orderCar');
+        }
     }
 }
 

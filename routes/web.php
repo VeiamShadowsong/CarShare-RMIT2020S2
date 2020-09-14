@@ -29,14 +29,15 @@ Route::post('/register', 'UserController@userRegister');
 
 Route::group(['middleware' => ['web','user.logged.in']], function () {
     Route::get('/logout', 'UserController@userLogout');
-    Route::get('/dashboard', function () {
-        return view('user.dashboard');
-    });
+    Route::get('/dashboard', 'UserController@showrDashboardPage');
 
     Route::get('/license', 'UserController@showLicensePage');
     Route::post('/license', 'UserController@updateLicense');
 
     Route::get('/cars', 'CarsController@showUserCarsPage');
+
+    Route::get('/cars/order/{carId}', 'UserController@showOrderCarPage');
+
 });
 
 Route::prefix('admin')->group(function () {
