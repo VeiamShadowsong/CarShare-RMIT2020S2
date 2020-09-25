@@ -45,7 +45,7 @@
                             <th>Type</th>
                             <th>Color</th>
                             <th>User</th>
-                            <th>State</th>
+                            <th>Status</th>
                             <th>Created at</th>
                             <th>Updated at</th>
                             <th>Actions</th>
@@ -58,7 +58,7 @@
                                 <td>{{$car->type}}</td>
                                 <td>{{$car->color}}</td>
                                 <td>{{$car->user->first_name}} {{$car->user->last_name}}</td>
-                                <td>{{$car->state}}</td>
+                                <td>{{$car->status}}</td>
                                 <td>{{$car->created_at}}</td>
                                 <td>{{$car->updated_at}}</td>
                                 <td nowrap>
