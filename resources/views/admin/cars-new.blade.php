@@ -65,6 +65,30 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="m-form__section m-form__section--first">
+                                <div class="form-group m-form__group row">
+                                    <label class="col-lg-2 col-form-label">*Number:</label>
+                                    <div class="col-lg-6">
+                                        <input class="form-control" name="number" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="m-form__section m-form__section--first">
+                                <div class="form-group m-form__group row">
+                                    <label class="col-lg-2 col-form-label">Lat:</label>
+                                    <div class="col-lg-6">
+                                        <input class="form-control" type="number" name="lat">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="m-form__section m-form__section--first">
+                                <div class="form-group m-form__group row">
+                                    <label class="col-lg-2 col-form-label">Lng:</label>
+                                    <div class="col-lg-6">
+                                        <input class="form-control" type="number" name="lng">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="m-portlet__foot m-portlet__foot--fit">
                             <div class="m-form__actions">
