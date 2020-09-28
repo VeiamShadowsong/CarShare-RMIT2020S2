@@ -127,7 +127,22 @@
 									<div id="m_header_menu" class="m-header-menu m-aside-header-menu-mobile m-aside-header-menu-mobile--offcanvas  m-header-menu--skin-light m-header-menu--submenu-skin-light m-aside-header-menu-mobile--skin-dark m-aside-header-menu-mobile--submenu-skin-dark ">
 										<ul class="m-menu__nav  m-menu__nav--submenu-arrow ">
 											<li class="m-menu__item"><a href="{{url('/')}}" class="m-menu__link"><i class="m-menu__link-icon flaticon-analytics"></i><span class="m-menu__link-text">Dashboard</span></a>
-											<li class="m-menu__item"><a href="{{url('/cars')}}" class="m-menu__link"><i class="m-menu__link-icon fa fa-car"></i><span class="m-menu__link-text">Cars</span></a>
+											<li class="m-menu__item  m-menu__item--submenu m-menu__item--rel" m-menu-submenu-toggle="click" m-menu-link-redirect="1" aria-haspopup="true"><a href="javascript:;" class="m-menu__link m-menu__toggle" title="Non functional dummy link"><span
+															class="m-menu__item-here"></span><i class="m-menu__link-icon fa fa-car"></i><span class="m-menu__link-text">Cars</span><i class="m-menu__hor-arrow la la-angle-down"></i><i class="m-menu__ver-arrow la la-angle-right"></i></a>
+												<div class="m-menu__submenu  m-menu__submenu--fixed m-menu__submenu--left" style="width:300px"><span class="m-menu__arrow m-menu__arrow--adjust"></span>
+													<div class="m-menu__subnav">
+														<ul class="m-menu__content">
+															<li class="m-menu__item">
+																<ul class="m-menu__inner">
+																	<br/>
+																	<li class="m-menu__item " m-menu-link-redirect="1" aria-haspopup="true"><a href="{{url('/cars')}}" class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--line"><span></span></i><span class="m-menu__link-text">Cars</span></a></li>
+																	<li class="m-menu__item " m-menu-link-redirect="1" aria-haspopup="true"><a href="{{url('/cars/list')}}" class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--line"><span></span></i><span class="m-menu__link-text">List</span></a></li>
+																</ul>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</li>
 											<li class="m-menu__item"><a href="{{url('/orders')}}" class="m-menu__link"><i class="m-menu__link-icon fa fa-list-ol"></i><span class="m-menu__link-text">Orders</span></a>
 											</li>
 										</ul>
@@ -244,7 +259,15 @@
 							<i class="m-menu__section-icon flaticon-more-v2"></i>
 						</li>
 						<li class="m-menu__item " aria-haspopup="true" m-menu-link-redirect="1"><a href="{{url('/dashboard')}}" class="m-menu__link "><i class="m-menu__link-icon flaticon-dashboard"></i><span class="m-menu__link-text">Users Dashboard</span></a></li>
-						<li class="m-menu__item " aria-haspopup="true" m-menu-link-redirect="1"><a href="{{url('/cars')}}" class="m-menu__link "><i class="m-menu__link-icon la la-car"></i><span class="m-menu__link-text">Cars</span></a></li>
+						<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true" m-menu-submenu-toggle="hover"><a href="javascript:;" class="m-menu__link m-menu__toggle"><i class="m-menu__link-icon fa fa-car"></i><span class="m-menu__link-text">Cars</span><i
+										class="m-menu__ver-arrow la la-car"></i></a>
+							<div class="m-menu__submenu "><span class="m-menu__arrow"></span>
+								<ul class="m-menu__subnav">
+									<li class="m-menu__item " aria-haspopup="true" m-menu-link-redirect="1"><a href="{{url('/cars')}}" class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text">Cars</span></a></li>
+									<li class="m-menu__item " aria-haspopup="true" m-menu-link-redirect="1"><a href="{{url('/cars/list')}}" class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text">List</span></a></li>
+								</ul>
+							</div>
+						</li>
 						<li class="m-menu__item " aria-haspopup="true" m-menu-link-redirect="1"><a href="{{url('/orders')}}" class="m-menu__link "><i class="m-menu__link-icon fa fa-list-ol"></i><span class="m-menu__link-text">Orders</span></a></li>
 					</ul>
 				</div>
