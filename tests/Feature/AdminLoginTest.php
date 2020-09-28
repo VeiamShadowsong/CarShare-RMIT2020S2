@@ -4,7 +4,7 @@ namespace Tests\Feature;
 
 use Tests\TestCase;
 
-class UserLoginTest extends TestCase
+class AdminLoginTest extends TestCase
 {
     /**
      * A basic feature test example.
@@ -13,22 +13,22 @@ class UserLoginTest extends TestCase
      */
     public function testExample()
     {
-        $email = 'aaa@aaa.com';
-        $password = 'aaa';
+        $username = 'hdplz';
+        $password = 'hdplz';
 
-        $failResponse = $this->post('login',[
-            'email' => $email,
+        $failResponse = $this->post('admin/login',[
+            'username' => $username,
             'password' => $password . 'wrong'
         ]);
         $failResponse->assertSee('Username or password is incorrect!');
 
-        $successResponse = $this->post('login',[
-            'email' => $email,
+        $successResponse = $this->post('admin/login',[
+            'username' => $username,
             'password' => $password
         ]);
-        $successResponse->assertSee($email);
+        $successResponse->assertSee($username);
 
-        $successResponse = $this->followingRedirects()->get('logout');
+        $successResponse = $this->followingRedirects()->get('admin/logout');
         $successResponse->assertSee('Login');
     }
 }
