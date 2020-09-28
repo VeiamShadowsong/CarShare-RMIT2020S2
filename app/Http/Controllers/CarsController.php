@@ -38,6 +38,9 @@ class CarsController extends Controller
             'user_id' => $input['user-id'],
             'make_id' => $input['make-id'],
             'type' => $input['type'],
+            'lat' => $input['lat'],
+            'lng' => $input['lng'],
+            'number' => $input['number'],
             'color' => $input['color']
         ]);
         return redirect('admin/cars');
