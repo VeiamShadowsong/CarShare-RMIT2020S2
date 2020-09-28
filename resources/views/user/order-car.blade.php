@@ -44,6 +44,7 @@
                      </span>
                                 <h3 class="m-portlet__head-text">
                                     Confirm that you want to order: {{$car->number}} - {{$car->make->name}}, {{$car->color}} {{$car->type}}
+                                    ${{env('HOURLY_RATE')}} / hr
                                 </h3>
                             </div>
                         </div>
