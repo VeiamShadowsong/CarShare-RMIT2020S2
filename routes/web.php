@@ -40,7 +40,11 @@ Route::group(['middleware' => ['web','user.logged.in']], function () {
         Route::post('/order/{carId}', 'UserController@orderCar');
     });
 
-    Route::get('/orders', 'UserController@showUserOrdersPage');
+    Route::prefix('orders')->group(function () {
+        Route::get('/', 'UserController@showUserOrdersPage');
+        Route::get('/return/{orderId}', 'UserController@showReturnOrderPage');
+        Route::post('/return/{orderId}', 'UserController@returnOrder');
+    });
 });
 
 Route::prefix('admin')->group(function () {

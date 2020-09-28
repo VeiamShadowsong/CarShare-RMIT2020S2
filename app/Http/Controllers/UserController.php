@@ -127,6 +127,19 @@ class UserController extends Controller
     {
         return view('user.orders')->with('orders', Order::where('user_id', session('user')[0]->id)->get());
     }
+
+    public function showReturnOrderPage($orderId)
+    {
+        return view('user.order-return')->with('order', Order::where('id',$orderId)->first());
+    }
+
+    public function returnOrder($orderId)
+    {
+        $order = Order::where('id',$orderId)->first();
+        $order->car->update(['status' => 'free']);
+        $order->delete();
+        return redirect('/orders');
+    }
 }
 
 ?>

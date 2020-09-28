@@ -48,16 +48,7 @@
                                 <td>{{$order->car->user->first_name}} {{$order->car->user->last_name}}</td>
                                 <td>{{$order->created_at}}</td>
                                 <td nowrap>
-                        <span class="dropdown">
-                           <a href="#" class="btn m-btn m-btn--hover-brand m-btn--icon m-btn--icon-only m-btn--pill" data-toggle="dropdown" aria-expanded="true">
-                           <i class="la la-ellipsis-h"></i>
-                           </a>
-                           <div class="dropdown-menu dropdown-menu-right">
-                              <a class="dropdown-item" href="{{url('/admin/order/order-detail/' . $order->car->id)}}"><i class="la la-edit"></i> Edit Details</a>
-                              <a class="dropdown-item cancel-order" data-toggle="modal" data-order-id="{{$order->car->id}}"><i class="la la-trash"></i> Cancel</a>
-                           </div>
-                        </span>
-                                    <a href="{{url('/admin/order/order-detail/' . $order->car->id)}}" class="m-portlet__nav-link btn m-btn m-btn--hover-brand m-btn--icon m-btn--icon-only m-btn--pill" title="View">
+                                    <a href="{{url('/orders/return/' . $order->id)}}" class="m-portlet__nav-link btn m-btn m-btn--hover-brand m-btn--icon m-btn--icon-only m-btn--pill" title="Return">
                                         <i class="la la-edit"></i>
                                     </a>
                                 </td>
