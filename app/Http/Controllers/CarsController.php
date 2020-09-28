@@ -16,6 +16,11 @@ class CarsController extends Controller
         return view('user.cars')->with('cars', Car::all());
     }
 
+    public function showUserCarsListPage()
+    {
+        return view('user.cars-list')->with('cars', Car::where('status', 'free')->get());
+    }
+
     public function showAdminCarsPage()
     {
         return view('admin.cars')->with('cars', Car::all());
@@ -25,7 +30,6 @@ class CarsController extends Controller
     {
         return view('admin.cars-new')->with('makes', Make::all())->with('users', User::all());
     }
-
 
     public function createNewCar(Request $request)
     {
