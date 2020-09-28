@@ -2,8 +2,6 @@
 
 namespace Tests\Feature;
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class UserLoginTest extends TestCase
@@ -30,5 +28,7 @@ class UserLoginTest extends TestCase
         ]);
         $successResponse->assertSee($email);
 
+        $successResponse = $this->followingRedirects()->get('logout');
+        $successResponse->assertSee('Login');
     }
 }
