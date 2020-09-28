@@ -36,6 +36,7 @@ Route::group(['middleware' => ['web','user.logged.in']], function () {
 
     Route::prefix('cars')->group(function () {
         Route::get('/', 'CarsController@showUserCarsPage');
+        Route::get('/list', 'CarsController@showUserCarsListPage');
         Route::get('/order/{carId}', 'UserController@showOrderCarPage');
         Route::post('/order/{carId}', 'UserController@orderCar');
     });
