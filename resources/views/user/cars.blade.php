@@ -32,11 +32,14 @@
         "use strict";
 
         function initMap() {
+            // Map
             const qv = new google.maps.LatLng({{env('DEFAULT_LAT')}}, {{env('DEFAULT_LNG')}});
             const map = new google.maps.Map(document.getElementById("map"), {
                 zoom: 15,
                 center: qv
             });
+
+            // User
             const userInfo = new google.maps.InfoWindow({
                 content: "Your position is QV"
             });
@@ -49,6 +52,7 @@
                 userInfo.open(map, userMarker);
             });
 
+            // Cars
             var cars = [];
             @foreach($cars as $car)
             cars.push([
@@ -60,29 +64,55 @@
                 new google.maps.InfoWindow({
                     content:
                         '<div id="content">' +
-                            '<div id="siteNotice">' +
-                            "</div>" +
-                                '<h1 id="firstHeading" class="firstHeading">{{$car->number}}</h1>' +
-                                '<div id="bodyContent">' +
-                                "<p><b>Make: </b>{{$car->make->name}}</p>" +
-                                "<p><b>Type: </b>{{$car->type}}</p>" +
-                                "<p><b>Color: </b>{{$car->color}}</p>" +
-                                "<p><b>Status: </b>{{$car->status}}</p>" +
-                                "<p><b>Owner: </b>{{$car->user->first_name}} {{$car->user->last_name}}</p>" +
-                                @if($car->status == 'free')
-                                `<a href="{{url('/cars/order')}}/{{$car->id}}" class="btn btn-primary m-btn m-btn--pill m-btn--custom m-btn--icon m-btn--air">Order</a>` +
-                                @elseif($car->status == 'ordered')
-                                `<button class="btn btn-metal m-btn m-btn--pill m-btn--custom m-btn--icon m-btn--air" disabled>Ordered</button>` +
-                                @endif
-                            "</div>" +
+                        '<div id="siteNotice">' +
+                        "</div>" +
+                        '<h1 class="firstHeading">{{$car->number}}</h1>' +
+                        '<div>' +
+                        "<p><b>Make: </b>{{$car->make->name}}</p>" +
+                        "<p><b>Type: </b>{{$car->type}}</p>" +
+                        "<p><b>Color: </b>{{$car->color}}</p>" +
+                        "<p><b>Status: </b>{{$car->status}}</p>" +
+                        "<p><b>Owner: </b>{{$car->user->first_name}} {{$car->user->last_name}}</p>" +
+                            @if($car->status == 'free')
+                            `<a href="{{url('/cars/order')}}/{{$car->id}}" class="btn btn-primary m-btn m-btn--pill m-btn--custom m-btn--icon m-btn--air">Order</a>` +
+                            @elseif($car->status == 'ordered')
+                            `<button class="btn btn-metal m-btn m-btn--pill m-btn--custom m-btn--icon m-btn--air" disabled>Ordered</button>` +
+                            @endif
+                                "</div>" +
                         "</div>"
                 })
             ]);
             @endforeach
-
             for(let i = 0; i < cars.length; i++) {
                 cars[i][0].addListener("click", () => {
                     cars[i][1].open(map, cars[i][0]);
+                });
+            }
+
+            // Parkings
+            var parkings = [];
+            @foreach($parkings as $parking)
+            parkings.push([
+                new google.maps.Marker({
+                    position: new google.maps.LatLng({{$parking->lat}}, {{$parking->lng}}),
+                    map,
+                    title: "{{$parking->name}}"
+                }),
+                new google.maps.InfoWindow({
+                    content:
+                        '<div id="content">' +
+                        '<div id="siteNotice">' +
+                        "</div>" +
+                        '<h1 class="firstHeading">{{$parking->name}}</h1>' +
+                        '<div>' +
+                        "<p><b>Address: </b>{{$parking->address}}</p>" +
+                        "</div>"
+                })
+            ]);
+            @endforeach
+            for(let i = 0; i < parkings.length; i++) {
+                parkings[i][0].addListener("click", () => {
+                    parkings[i][1].open(map, parkings[i][0]);
                 });
             }
         }
