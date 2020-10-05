@@ -77,5 +77,6 @@ Route::prefix('admin')->group(function () {
         });
 
         Route::get('/orders', 'AdminController@showAdminOrdersPage');
+        Route::get('/payments', 'AdminController@showAdminPaymentsPage');
     });
 });
