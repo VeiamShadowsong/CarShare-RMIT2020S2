@@ -155,7 +155,7 @@
                 title: "Car position"
             });
             carMarker.addListener("click", () => {
-                carInfo.open(map, userMarker);
+                carInfo.open(map, carMarker);
             });
         }
 
