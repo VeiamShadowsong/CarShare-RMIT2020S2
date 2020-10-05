@@ -29,7 +29,7 @@ Route::post('/register', 'UserController@userRegister');
 
 Route::group(['middleware' => ['web','user.logged.in']], function () {
     Route::get('/logout', 'UserController@userLogout');
-    Route::get('/dashboard', 'UserController@showrDashboardPage');
+    Route::get('/dashboard', 'UserController@showDashboardPage');
 
     Route::get('/license', 'UserController@showLicensePage');
     Route::post('/license', 'UserController@updateLicense');
@@ -60,9 +60,7 @@ Route::prefix('admin')->group(function () {
 
     Route::group(['middleware' => ['web','admin.logged.in']], function () {
         Route::get('/logout', 'AdminController@adminLogout');
-        Route::get('/dashboard', function () {
-            return view('admin.dashboard');
-        });
+        Route::get('/dashboard', 'AdminController@showDashboardPage');
 
         Route::prefix('cars')->group(function () {
             Route::get('/', 'CarsController@showAdminCarsPage');
