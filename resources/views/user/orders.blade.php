@@ -54,9 +54,11 @@
                                 <td>${{$order->price()}}</td>
                                 <td>{{$order->status}}</td>
                                 <td nowrap>
+                                    @if($order->status == 'created')
                                     <a href="{{url('/orders/return/' . $order->id)}}" class="m-portlet__nav-link btn m-btn m-btn--hover-brand m-btn--icon m-btn--icon-only m-btn--pill" title="Return">
                                         <i class="la la-edit"></i>
                                     </a>
+                                    @endif
                                 </td>
                             </tr>
                         @endforeach

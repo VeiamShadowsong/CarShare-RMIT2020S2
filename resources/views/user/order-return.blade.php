@@ -58,15 +58,15 @@
                                 <div class="col-6">
                                     <div class="m-radio-inline">
                                         <label class="m-radio">
-                                            <input type="radio" name="payment-type" checked>Visa
+                                            <input type="radio" name="payment-type" value="Visa" checked>Visa
                                             <span></span>
                                         </label>
                                         <label class="m-radio">
-                                            <input type="radio" name="payment-type">Master Card
+                                            <input type="radio" name="payment-type" value="Master Card">Master Card
                                             <span></span>
                                         </label>
                                         <label class="m-radio">
-                                            <input type="radio" name="payment-type">Paypal
+                                            <input type="radio" name="payment-type" value="Paypal">Paypal
                                             <span></span>
                                         </label>
                                     </div>
