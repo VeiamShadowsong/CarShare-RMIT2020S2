@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Parking;
 use App\Models\User;
 use App\Models\License;
 use App\Models\Car;
@@ -131,7 +132,7 @@ class UserController extends Controller
 
     public function showReturnOrderPage($orderId)
     {
-        return view('user.order-return')->with('order', Order::where('id',$orderId)->first());
+        return view('user.order-return')->with('order', Order::where('id',$orderId)->first())->with('parkings', Parking::all());
     }
 
     public function returnOrder(Request $request, $orderId)
