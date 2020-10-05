@@ -65,9 +65,14 @@ class UserController extends Controller
         return redirect('/login');
     }
 
-    public function showrDashboardPage()
+    public function showDashboardPage()
     {
-        return view('user.dashboard');
+        $user =   session('user')[0];
+        $orders = $user->orders;
+        return view('user.dashboard')
+            ->with('orderCount', $orders->count())
+            ->with('carCount', $user->cars->count())
+            ->with('cost', Payment::all()->sum('price'));
     }
 
     public function showLicensePage($error = null)

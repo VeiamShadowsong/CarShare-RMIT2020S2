@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Admin;
 use App\Models\Order;
+use App\Models\Car;
 use App\Models\Payment;
 
 use Illuminate\Http\Request;
@@ -31,6 +32,14 @@ class AdminController extends Controller
     {
         session(['admin' => null]);
         return redirect('/admin/login');
+    }
+
+    public function showDashboardPage()
+    {
+        return view('admin.dashboard')
+            ->with('orderCount', Order::all()->count())
+            ->with('carCount', Car::all()->count())
+            ->with('inCome', Payment::all()->sum('price'));
     }
 
     public function showAdminOrdersPage()

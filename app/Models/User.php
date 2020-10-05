@@ -21,6 +21,16 @@ class User extends Authenticatable
 
     protected $guarded = [];
 
+    public function cars()
+    {
+        return $this->hasMany('App\Models\Car');
+    }
+
+    public function orders()
+    {
+        return $this->hasMany('App\Models\Order');
+    }
+
     public function license()
     {
         return $this->hasOne('App\Models\License')->orderBy('expired_at', 'DESC')->first();
