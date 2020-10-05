@@ -155,6 +155,7 @@
 												</div>
 											</li>
 											<li class="m-menu__item"><a href="{{url('/admin/orders')}}" class="m-menu__link"><i class="m-menu__link-icon fa fa-list-ol"></i><span class="m-menu__link-text">Orders</span></a>
+											<li class="m-menu__item"><a href="{{url('/admin/payments')}}" class="m-menu__link"><i class="m-menu__link-icon la la-dollar"></i><span class="m-menu__link-text">Payments</span></a>
 										</ul>
 									</div>
 
@@ -274,6 +275,7 @@
 							</div>
 						</li>
 						<li class="m-menu__item " aria-haspopup="true" m-menu-link-redirect="1"><a href="{{url('/admin/orders')}}" class="m-menu__link "><i class="m-menu__link-icon fa fa-list-ol"></i><span class="m-menu__link-text">Orders</span></a></li>
+						<li class="m-menu__item " aria-haspopup="true" m-menu-link-redirect="1"><a href="{{url('/admin/payments')}}" class="m-menu__link "><i class="m-menu__link-icon la la-dollar"></i><span class="m-menu__link-text">Payments</span></a></li>
 					</ul>
 				</div>
 
