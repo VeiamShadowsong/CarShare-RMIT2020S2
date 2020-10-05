@@ -112,7 +112,7 @@
                                 <div class="form-group m-form__group row">
                                     <label class="col-lg-2 col-form-label">*Expired At:</label>
                                     <div class="col-lg-6">
-                                        <input class="form-control" name="expired-at" type="date" required>
+                                        <input type="text" class="form-control" name="expired-at"  id="expired-at" readonly />
                                     </div>
                                 </div>
                             </div>
@@ -131,4 +131,14 @@
         </div>
         @endif
     </div>
+
+@endsection
+
+@section('script')
+    <script src="{{asset('resources/theme/assets/demo/default/base/scripts.bundle.js')}}"></script>
+    <script>
+        $('#expired-at').datepicker({
+            format: 'yyyy-mm-dd',
+        });
+    </script>
 @endsection
