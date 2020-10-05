@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\License;
 use App\Models\Car;
 use App\Models\Order;
+use App\Models\Payment;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -133,11 +134,17 @@ class UserController extends Controller
         return view('user.order-return')->with('order', Order::where('id',$orderId)->first());
     }
 
-    public function returnOrder($orderId)
+    public function returnOrder(Request $request, $orderId)
     {
+        $input = $request->all();
         $order = Order::where('id',$orderId)->first();
+        Payment::create([
+            'order_id' => $orderId,
+            'price' => $order->price(),
+            'gateway' => $input['payment-type']
+        ]);
         $order->car->update(['status' => 'free']);
-        $order->delete();
+        $order->update(['status' => 'paid']);
         return redirect('/orders');
     }
 }

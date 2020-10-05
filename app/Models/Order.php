@@ -20,4 +20,33 @@ class Order extends Model
     {
         return $this->belongsTo('App\Models\Car');
     }
+
+    public function payment()
+    {
+        return $this->hasOne('App\Models\Payment');
+    }
+
+    public function price()
+    {
+        return round($this->duration() * env('HOURLY_RATE'), 2);
+    }
+
+    public function duration()
+    {
+        $startTime = strtotime($this->created_at);
+        $endTime = $startTime;
+        switch ($this->status) {
+            case 'created':
+                $endTime = time();
+                break;
+            case 'paid':
+                $endTime = strtotime($this->updated_at);
+                break;
+            case 'canceled':
+                $endTime = $startTime;
+                break;
+        }
+
+        return round(($endTime - $startTime) / 60 / 60, 2);
+    }
 }

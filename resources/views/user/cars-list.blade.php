@@ -60,16 +60,7 @@
                                 <td>{{$car->created_at}}</td>
                                 <td>{{$car->updated_at}}</td>
                                 <td nowrap>
-                        <span class="dropdown">
-                           <a href="#" class="btn m-btn m-btn--hover-brand m-btn--icon m-btn--icon-only m-btn--pill" data-toggle="dropdown" aria-expanded="true">
-                           <i class="la la-ellipsis-h"></i>
-                           </a>
-                           <div class="dropdown-menu dropdown-menu-right">
-                              <a class="dropdown-item" href="{{url('/admin/car/car-detail/' . $car->id)}}"><i class="la la-edit"></i> Edit Details</a>
-                              <a class="dropdown-item delete-car" data-toggle="modal" data-car-id="{{$car->id}}"><i class="la la-trash"></i> Delete</a>
-                           </div>
-                        </span>
-                                    <a href="{{url('/admin/car/car-detail/' . $car->id)}}" class="m-portlet__nav-link btn m-btn m-btn--hover-brand m-btn--icon m-btn--icon-only m-btn--pill" title="View">
+                                    <a href="{{url('/cars/order/' . $car->id)}}" class="m-portlet__nav-link btn m-btn m-btn--hover-brand m-btn--icon m-btn--icon-only m-btn--pill" title="Order">
                                         <i class="la la-edit"></i>
                                     </a>
                                 </td>
