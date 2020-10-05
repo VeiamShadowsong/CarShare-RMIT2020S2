@@ -44,7 +44,7 @@
                      </span>
                                 <h3 class="m-portlet__head-text">
                                     Confirm that you want to return: {{$order->car->number}} - {{$order->car->make->name}}, {{$order->car->color}} {{$order->car->type}}
-                                    Cost :${{round(env('HOURLY_RATE') * (time() - strtotime($order->created_at)) / 60 / 60, 2)}}
+                                    Cost :${{$order->price()}}
                                 </h3>
                             </div>
                         </div>

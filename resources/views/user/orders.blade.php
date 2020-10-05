@@ -37,6 +37,7 @@
                             <th>Ordered at</th>
                             <th>Duration</th>
                             <th>Cost</th>
+                            <th>Status</th>
                             <th>Actions</th>
                         </tr>
                         </thead>
@@ -49,11 +50,9 @@
                                 <td>{{$order->car->color}}</td>
                                 <td>{{$order->car->user->first_name}} {{$order->car->user->last_name}}</td>
                                 <td>{{$order->created_at}}</td>
-                                @php
-                                $time =  (time() - strtotime($order->created_at)) / 60 / 60;
-                                @endphp
-                                <td>{{round($time, 2)}}</td>
-                                <td>${{round($time * env('HOURLY_RATE'), 2)}}</td>
+                                <td>{{$order->duration()}}</td>
+                                <td>${{$order->price()}}</td>
+                                <td>{{$order->status}}</td>
                                 <td nowrap>
                                     <a href="{{url('/orders/return/' . $order->id)}}" class="m-portlet__nav-link btn m-btn m-btn--hover-brand m-btn--icon m-btn--icon-only m-btn--pill" title="Return">
                                         <i class="la la-edit"></i>
