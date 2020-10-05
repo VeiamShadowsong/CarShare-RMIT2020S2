@@ -16,8 +16,8 @@ class CarSeeder extends Seeder
     {
         $userCount = User::count();
         $makeCount = Make::count();
-        $lat = -37.8106277;
-        $lng = 144.9634516;
+        $lat = env('DEFAULT_LAT');
+        $lng = env('DEFAULT_LNG');
         $zoom = 100000;
         $randomRange = 2000;
         $types = [

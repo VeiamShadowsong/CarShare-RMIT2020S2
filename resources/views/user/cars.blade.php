@@ -32,7 +32,7 @@
         "use strict";
 
         function initMap() {
-            const qv = new google.maps.LatLng(-37.8106277, 144.9634516);
+            const qv = new google.maps.LatLng({{env('DEFAULT_LAT')}}, {{env('DEFAULT_LNG')}});
             const map = new google.maps.Map(document.getElementById("map"), {
                 zoom: 15,
                 center: qv
