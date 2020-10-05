@@ -118,11 +118,14 @@
         "use strict";
 
         function initMap() {
+            // Map
             const qv = new google.maps.LatLng(-37.8106277, 144.9634516);
             const map = new google.maps.Map(document.getElementById("map"), {
                 zoom: 15,
                 center: qv
             });
+
+            // User
             const userInfo = new google.maps.InfoWindow({
                 content: "Your position is QV"
             });
@@ -135,6 +138,7 @@
                 userInfo.open(map, userMarker);
             });
 
+            // Car
             const car = new google.maps.LatLng({{$order->car->lat}}, {{$order->car->lng}});
             const carInfo = new google.maps.InfoWindow({
                 content:
@@ -155,8 +159,35 @@
                 title: "Car position"
             });
             carMarker.addListener("click", () => {
-                carInfo.open(map, userMarker);
+                carInfo.open(map, carMarker);
             });
+
+            // Parkings
+            var parkings = [];
+            @foreach($parkings as $parking)
+            parkings.push([
+                new google.maps.Marker({
+                    position: new google.maps.LatLng({{$parking->lat}}, {{$parking->lng}}),
+                    map,
+                    title: "{{$parking->name}}"
+                }),
+                new google.maps.InfoWindow({
+                    content:
+                        '<div id="content">' +
+                        '<div id="siteNotice">' +
+                        "</div>" +
+                        '<h1 class="firstHeading">{{$parking->name}}</h1>' +
+                        '<div>' +
+                        "<p><b>Address: </b>{{$parking->address}}</p>" +
+                        "</div>"
+                })
+            ]);
+            @endforeach
+            for(let i = 0; i < parkings.length; i++) {
+                parkings[i][0].addListener("click", () => {
+                    parkings[i][1].open(map, parkings[i][0]);
+                });
+            }
         }
 
         initMap()

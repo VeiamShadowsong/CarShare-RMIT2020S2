@@ -5,20 +5,20 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Make;
 use App\Models\Car;
+use App\Models\Parking;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 
 class CarsController extends Controller
 {
     public function showUserCarsPage()
     {
-        return view('user.cars')->with('cars', Car::all());
+        return view('user.cars')->with('cars', Car::all())->with('parkings', Parking::all());
     }
 
     public function showUserCarsListPage()
     {
-        return view('user.cars-list')->with('cars', Car::where('status', 'free')->get());
+        return view('user.cars-list')->with('cars', Car::where('status', 'free'));
     }
 
     public function showAdminCarsPage()
