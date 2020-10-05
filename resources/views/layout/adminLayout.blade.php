@@ -155,6 +155,7 @@
 												</div>
 											</li>
 											<li class="m-menu__item"><a href="{{url('/admin/orders')}}" class="m-menu__link"><i class="m-menu__link-icon fa fa-list-ol"></i><span class="m-menu__link-text">Orders</span></a>
+											<li class="m-menu__item"><a href="{{url('/admin/payments')}}" class="m-menu__link"><i class="m-menu__link-icon la la-dollar"></i><span class="m-menu__link-text">Payments</span></a>
 										</ul>
 									</div>
 
@@ -265,7 +266,7 @@
 							</div>
 						</li>
 						<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true" m-menu-submenu-toggle="hover"><a href="javascript:;" class="m-menu__link m-menu__toggle"><i class="m-menu__link-icon fa fa-car"></i><span class="m-menu__link-text">Cars</span><i
-										class="m-menu__ver-arrow la la-car"></i></a>
+										class="m-menu__ver-arrow la la-angle-right"></i></a>
 							<div class="m-menu__submenu "><span class="m-menu__arrow"></span>
 								<ul class="m-menu__subnav">
 									<li class="m-menu__item " aria-haspopup="true" m-menu-link-redirect="1"><a href="{{url('/admin/cars')}}" class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text">Cars</span></a></li>
@@ -274,6 +275,7 @@
 							</div>
 						</li>
 						<li class="m-menu__item " aria-haspopup="true" m-menu-link-redirect="1"><a href="{{url('/admin/orders')}}" class="m-menu__link "><i class="m-menu__link-icon fa fa-list-ol"></i><span class="m-menu__link-text">Orders</span></a></li>
+						<li class="m-menu__item " aria-haspopup="true" m-menu-link-redirect="1"><a href="{{url('/admin/payments')}}" class="m-menu__link "><i class="m-menu__link-icon la la-dollar"></i><span class="m-menu__link-text">Payments</span></a></li>
 					</ul>
 				</div>
 

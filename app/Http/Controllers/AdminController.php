@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Admin;
 use App\Models\Order;
+use App\Models\Payment;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -35,6 +36,11 @@ class AdminController extends Controller
     public function showAdminOrdersPage()
     {
         return view('admin.orders')->with('orders', Order::all());
+    }
+
+    public function showAdminPaymentsPage()
+    {
+        return view('admin.payments')->with('payments', Payment::all());
     }
 }
 
