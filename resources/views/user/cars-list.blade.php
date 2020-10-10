@@ -18,52 +18,29 @@
         <!--Begin::Section-->
         <div class="row">
             <div class="m-portlet m-portlet--mobile" style="width: 100%;">
-                <div class="m-portlet__head">
-                    <div class="m-portlet__head-caption">
-                        <div class="m-portlet__head-title">
-                            <h3 class="m-portlet__head-text" id="table-title">Car List</h3>
-                        </div>
-                    </div>
-                    <div class="m-portlet__head-tools">
-                        <ul class="m-portlet__nav">
-                            <li class="m-portlet__nav-item">
-                                <a href="{{url('/admin/cars/new')}}" class="btn btn-primary m-btn m-btn--pill m-btn--custom m-btn--icon m-btn--air">
-                     <span>
-                     <i class="la la-plus"></i>
-                     <span>New Car</span>
-                     </span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
                 <div class="m-portlet__body">
                     <table class="table table-striped table-bordered table-hover table-checkable" id="car-table">
                         <thead>
                         <tr>
+                            <th>Number</th>
                             <th>Make</th>
                             <th>Type</th>
                             <th>Color</th>
                             <th>User</th>
                             <th>Created at</th>
                             <th>Updated at</th>
-                            <th>Actions</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($cars as $car)
                             <tr>
+                                <td>{{$car->number}}</td>
                                 <td>{{$car->make->name}}</td>
                                 <td>{{$car->type}}</td>
                                 <td>{{$car->color}}</td>
                                 <td>{{$car->user->first_name}} {{$car->user->last_name}}</td>
                                 <td>{{$car->created_at}}</td>
                                 <td>{{$car->updated_at}}</td>
-                                <td nowrap>
-                                    <a href="{{url('/cars/order/' . $car->id)}}" class="m-portlet__nav-link btn m-btn m-btn--hover-brand m-btn--icon m-btn--icon-only m-btn--pill" title="Order">
-                                        <i class="la la-edit"></i>
-                                    </a>
-                                </td>
                             </tr>
                         @endforeach
                         </tbody>

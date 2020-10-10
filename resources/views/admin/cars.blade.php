@@ -41,6 +41,7 @@
                     <table class="table table-striped table-bordered table-hover table-checkable" id="car-table">
                         <thead>
                         <tr>
+                            <th>Number</th>
                             <th>Make</th>
                             <th>Type</th>
                             <th>Color</th>
@@ -54,6 +55,7 @@
                         <tbody>
                         @foreach($cars as $car)
                             <tr>
+                                <td>{{$car->number}}</td>
                                 <td>{{$car->make->name}}</td>
                                 <td>{{$car->type}}</td>
                                 <td>{{$car->color}}</td>

@@ -31,7 +31,7 @@
                                     <div class="m-widget1__item">
                                         <div class="row m-row--no-padding align-items-center">
                                             <div class="col">
-                                                <h3 class="m-widget1__title">Order Profit</h3>
+                                                <h3 class="m-widget1__title">Total Order Count</h3>
                                                 <span class="m-widget1__desc">Total order count</span>
                                             </div>
                                             <div class="col m--align-right">

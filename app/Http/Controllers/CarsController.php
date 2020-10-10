@@ -18,7 +18,7 @@ class CarsController extends Controller
 
     public function showUserCarsListPage()
     {
-        return view('user.cars-list')->with('cars', Car::where('status', 'free'));
+        return view('user.cars-list')->with('cars', Car::where('user_id', session('user')[0]->id)->get());
     }
 
     public function showAdminCarsPage()
